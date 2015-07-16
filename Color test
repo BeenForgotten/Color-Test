@@ -1,0 +1,28 @@
+#include<windows.h>
+#include<stdio.h>
+#include<iostream>
+using namespace std;
+
+int main(int argc, char** argv)
+{
+    bool endLilLoop = 0;
+    int   _red = 188;
+    int   _green = 91;
+    int       _blue = 0;
+    Sleep(3000);
+    while(endLilLoop == 0)
+    {
+       Sleep(200);
+    HDC _hdc = GetDC(NULL);
+    COLORREF _color = GetPixel(_hdc, 0, 0); // --------> coordinates of the pixel
+    int _red = GetRValue(_color);
+    int _green = GetGValue(_color);
+    int _blue = GetBValue(_color);
+
+        std::cout << "red : " << _red << std::endl;
+        std::cout << "green : " << _green << std::endl;
+        std::cout << "blue : " << _blue << std::endl;
+
+    }
+    return 0;
+}
